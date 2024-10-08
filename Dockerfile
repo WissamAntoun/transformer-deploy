@@ -33,6 +33,7 @@ COPY ./src/transformer_deploy/__init__.py ./src/transformer_deploy/__init__.py
 
 RUN pip3 install -r requirements.txt && \
     pip3 install nvidia-pyindex --no-cache-dir && \
-    pip3 install -r requirements_gpu.txt
+    pip3 install -r requirements_gpu.txt && \
+    pip3 install ".[GPU]" --extra-index-url https://pypi.ngc.nvidia.com --no-cache-dir
 
 COPY ./ ./
